@@ -44,6 +44,7 @@ The idea behind The Sociality Protocol is to have a mesh network of user's perso
 
 ##### Standards
 Since the network should be comprised of servers, and key servers, there is an expected standard to uphold when communicating with each other.
+
 1. All software must embrace a simple RESTful interface for data exchanges.
 2. All software must embrace encryption of everything with a user.
 3. All software must adhere to a simple data format when exporting and importing user's content.
@@ -73,15 +74,27 @@ Key servers must allow for exchange between users, either through an RESTful int
 
 #### Exchanging Keys
 The process for exchanging keys is as follows:
+
 1. Primary User searches key server for username or email address or IP address hash of Other User to add.
-2. Key Server notifies Other User that the Primary User wants to share data, and passes on the Primary User's key for storage.
-3. If Other User accepts, the key server notifies Primary User with the Other User's key.
+2. Key Server notifies Other User that the Primary User wants to share data, and passes on the Primary User's key for storage, along with Primary User's associated data.
+3. If Other User accepts, the key server notifies Primary User with the Other User's key and associated data.
 
 The Key Server must also indicate the type of content the Primary User wants to access. (see Sharing Data)
 
+#### Trusted Key Server
+A trusted key server are a set of key servers that have gone through The Sociality Project's trusted key server program. This allows users to make decisions on their personal information being stored on these servers.
+
+#### Associated Data
+The key server's only data it houses is:
+
+1. Username/Email Address/IP Address Hash/Unique Identifier.
+2. Public Key
+3. Web Server Address
+
+This is passed as a JSON data object when adding new users to each other's social network.
+
 ### User Profile
-A user profile consists of the following items:
-1. Username/E-mail Address/IP Address Hash
+User Profiles 
 
 ### Sharing Data
 ### Commenting
